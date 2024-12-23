@@ -5,11 +5,10 @@ export const useGetCallById = (id: string | string[]) => {
   const [call, setCall] = useState<Call>();
   const [isCallLoading, setIsCallLoading] = useState(true);
 
-  const client = useStreamVideoClient();
-
+  const client = useStreamVideoClient()
   useEffect(() => {
     if (!client) return;
-    
+
     const loadCall = async () => {
       try {
         // https://getstream.io/video/docs/react/guides/querying-calls/#filters
